@@ -10,6 +10,7 @@ body {
     color: #4A4A4F;
 }
 
+
 /* Colors */
 
 .navbar-light .navbar-nav .nav-link {
@@ -31,8 +32,8 @@ body {
 /* Home page image and cover text */
 
 .container-fluid {
-    padding-right: 0;
     padding-left: 0;
+    padding-right: 0;
 }
 
 .landing-image {
@@ -51,6 +52,8 @@ body {
     color: #105ce8;
 }
 
+/* Introduction with button link to Blog */
+
 .cover-text {
     margin-top: 20vh;
     background-color: rgba(255, 166, 0, 0.648);
@@ -63,8 +66,21 @@ body {
 }
 
 .bootcamp-intro {
-    color: #105ce8;
-    background-color: rgba(237, 239, 242, 0.952);
+    color: darkorange;
+    background-color: #fff;
+}
+
+.bootcamp-intro h1 {
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    font-size: 3rem;
+}
+
+.bootcamp-intro p {
+    font-weight: 400;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    padding-bottom: 1vh;
 }
 
 .btn-blog {
@@ -74,7 +90,7 @@ body {
     background: darkorange;
     font-size: 200%;
     font-weight: 500;
-    margin: 1vh;
+    margin-top: 2vh;
     padding: 0.5vh 1vh;
 }
 
@@ -84,10 +100,67 @@ body {
     background: transparent;
 }
 
+.section-divider {
+    border-top: 0.25rem solid #105ce8;
+    margin-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+/* Exercises with emerging text when hovered over */
+
+.training-1 {
+    margin-top: 5vh;
+    background-color: #105ce8;
+    height: 40vh;
+}
+
+.exercise-detail {
+    height: 50vh;
+}
+
+.back-box {
+    margin-top: 5vh;
+    background-color: #105ce8;
+    height: 40vh;
+}
+
+.map-outer {
+    background-color: #105ce8;
+    height: 40vh;
+}
+
+/* Media queries for medium screen sizes less than 576px */
+@media screen and (max-width: 798px) {
+    .bootcamp-intro h1 {
+        font-size: 2.5rem;
+    }
+}
+
 /* Media queries for small screen sizes less than 576px */
 @media screen and (max-width: 576px) {
     .cover-text {
         margin-left: 60%;
+    }
+
+    .section-divider {
+        margin-left: 25vw;
+        margin-right: 25vw;
+    }
+
+    .intro-text, .section-divider {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    .bootcamp-intro h1 {
+        font-size: 2rem;
+    }
+
+    .btn-blog {
+        font-size: 150%;
+        font-weight: 500;
+        margin-top: 2vh;
+        padding: 0.5vh 1vh;
     }
 }
 
