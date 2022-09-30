@@ -10,7 +10,6 @@ body {
     color: #4A4A4F;
 }
 
-
 /* Colors */
 
 .navbar-light .navbar-nav .nav-link {
@@ -18,7 +17,7 @@ body {
 }
 
 .bg-orange {
-    background-color: rgba(255, 166, 0, 0.648)
+    background-color: rgba(255, 166, 0, 0.648);
 }
 
 .blue-o {
@@ -43,6 +42,7 @@ body {
     height: 50vh;
     width: 100%;
     position: relative;
+    padding-bottom: 25vh;
   }
 
 .cover-text h5, .cover-text h6 {
@@ -51,7 +51,12 @@ body {
     color: #105ce8;
 }
 
-/* Introduction with button link to Blog */
+/* Introduction with embeded google map image */
+
+.intro-spacer {
+    padding-top: 5vh;
+    background-color: rgba(255, 166, 0, 0.648);
+}
 
 .cover-text {
     margin-top: 20vh;
@@ -60,23 +65,21 @@ body {
     position: absolute;
 }
 
-.click-to-blog {
+.sign-up {
     text-decoration: none;
 }
 
 .bootcamp-intro {
-    color: darkorange;
+    color: #1a3771dc;
     background-color: #fff;
 }
 
 .bootcamp-intro h1 {
     font-size: 2.5rem;
+    font-weight: 700;
     margin-top: 2.5vh;
     margin-bottom: 2.5vh;
-}
-
-.bootcamp-intro h2 {
-    font-size: 2rem;
+    color: #105ce8;
 }
 
 .bootcamp-intro p {
@@ -87,8 +90,31 @@ body {
     padding-bottom: 1vh;
 }
 
-.btn-blog {
+.map-outer {
+    height: 40vh;
+    padding: 5%;
+}
+
+.map {
+    height: 100%;
+    width: 100%;
+}
+
+.section-divider {
+    border-top: 0.25rem solid darkorange;
+    margin-top: 2.5vh;
+    padding-bottom: 2.5vh;
+}
+
+/* Bootcamp information with button link to Blog */
+
+.bootcamp-intro h2 {
+    font-size: 2rem;
     color: #105ce8;
+}
+
+.btn-blog {
+    color: #1a3771dc;
     border: none;
     border-radius: 5px;
     background: darkorange;
@@ -104,37 +130,49 @@ body {
     background: transparent;
 }
 
-.section-divider {
-    border-top: 0.25rem solid #105ce8;
+/* All 4 types of workout incorporated into a beach bootcamp */
+
+.endurance-image, .strength-image, .balance-image {
+    background: no-repeat center 40%;
+    background-size: cover;
+    height: 25vh;
+    position: relative;
+  }
+
+.endurance-image {
+    background-image: url('https://res.cloudinary.com/dwc6uclyo/image/upload/v1664543999/running_ishige.jpg');
+}
+
+.strength-image {
+    background-image: url('https://res.cloudinary.com/dwc6uclyo/image/upload/v1664538668/strength_ksmjoi.jpg');
+}
+
+.balance-image {
+    background-image: url('https://res.cloudinary.com/dwc6uclyo/image/upload/v1664546323/balance_g5oz4g.jpg');
+}
+
+.flexibility-image {
+    background: no-repeat center 80%;
+    background-size: cover;
+    height: 25vh;
+    position: relative;
+    background-image: url('https://res.cloudinary.com/dwc6uclyo/image/upload/v1664544675/flexibility_u2mi2n.jpg');
+}
+
+.workout-type {
     margin-top: 2.5vh;
-    padding-bottom: 2.5vh;
-}
-
-/* Exercises with emerging text when hovered over */
-
-.training-1 {
-    margin-top: 5vh;
-    background-color: #105ce8;
+    background-color: #1a3771dc;
     height: 40vh;
+    overflow: auto;
 }
 
-.exercise-detail {
-    height: 50vh;
-}
-
-.back-box {
-    margin-top: 5vh;
-    background-color: #105ce8;
-    height: 40vh;
-}
-
-.map-outer {
-    height: 40vh;
-}
-
-.map {
-    height: 100%;
-    width: 100%;
+.exercise-detail p {
+    line-height: 1.1rem;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    margin: 1vh 1vw;
+    text-align: center;
+    color: darkorange;
 }
 
 /* Media queries for medium screen sizes less than 576px */
