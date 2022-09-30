@@ -39,7 +39,6 @@ body {
 .landing-image {
     background: no-repeat center 25%;
     background-image: url('https://res.cloudinary.com/dwc6uclyo/image/upload/v1664098996/bootcamp/hero_image_vfy7fk.jpg');
-    background-color: #868e96;
     background-size: cover;
     height: 50vh;
     width: 100%;
@@ -71,15 +70,20 @@ body {
 }
 
 .bootcamp-intro h1 {
-    padding-top: 2vh;
-    padding-bottom: 1vh;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+}
+
+.bootcamp-intro h2 {
+    font-size: 2rem;
 }
 
 .bootcamp-intro p {
     font-weight: 400;
     line-height: 2rem;
     font-size: 1.5rem;
+    letter-spacing: 0.1rem;
     padding-bottom: 1vh;
 }
 
@@ -90,8 +94,8 @@ body {
     background: darkorange;
     font-size: 200%;
     font-weight: 500;
-    margin-top: 2vh;
-    padding: 0.5vh 1vh;
+    margin-top: 1vh;
+    padding: 1vh 0;
 }
 
 .btn-blog:hover {
@@ -102,8 +106,8 @@ body {
 
 .section-divider {
     border-top: 0.25rem solid #105ce8;
-    margin-top: 5vh;
-    padding-bottom: 5vh;
+    margin-top: 2.5vh;
+    padding-bottom: 2.5vh;
 }
 
 /* Exercises with emerging text when hovered over */
@@ -125,8 +129,12 @@ body {
 }
 
 .map-outer {
-    background-color: #105ce8;
     height: 40vh;
+}
+
+.map {
+    height: 100%;
+    width: 100%;
 }
 
 /* Media queries for medium screen sizes less than 576px */
@@ -156,11 +164,30 @@ body {
         font-size: 2rem;
     }
 
+    .bootcamp-intro h2 {
+        font-size: 2rem;
+    }
+
+    .button-container-div {
+        display: flex;
+        justify-content: center;
+    }
+
     .btn-blog {
         font-size: 150%;
-        font-weight: 500;
         margin-top: 2vh;
-        padding: 0.5vh 1vh;
+        padding: 1vh 2vw;
+    }
+}
+
+/* Media queries for small screen sizes less than 450px */
+@media screen and (max-width: 450px) {
+    .bootcamp-intro h1 {
+        font-size: 2rem;
+    }
+
+    .bootcamp-intro h2 {
+        font-size: 2rem;
     }
 }
 
