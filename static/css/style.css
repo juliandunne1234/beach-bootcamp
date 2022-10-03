@@ -90,7 +90,7 @@ footer {
     background-color: #fff;
 }
 
-.bootcamp-intro h1 {
+.bootcamp-intro h1, .blog-header h1 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-top: 2.5vh;
@@ -192,9 +192,50 @@ footer {
     color: darkorange;
 }
 
-/* Media queries for medium screen sizes less than 576px */
+/* Bootcamp Blog */
+
+.post-container {
+    margin-top: 2.5vh;
+    background-color: #1a3771dc;
+    height: 40vh;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.post-link {
+    color: darkorange;
+    text-decoration: none;
+}
+
+.post-content-container {
+    color: darkorange;
+    padding: 1vh 2vw;
+}
+
+.post-img-top {
+    background: no-repeat center 40%;
+    background-size: cover;
+    height: 50%;
+    width: 100%;
+    position: relative;
+}
+
+.post-content-divider {
+    border-top: 0.25rem solid darkorange;
+    margin-top: 0.5vh;
+}
+
+.transform-post {
+    transition: all .5s ease-in; 
+}
+
+.transform-post:hover {
+    transform: scale(1.05);
+}
+
+/* Media queries for medium screen sizes less than 798px */
 @media screen and (max-width: 798px) {
-    .bootcamp-intro h1 {
+    .bootcamp-intro h1, .blog-header h1 {
         font-size: 2.5rem;
     }
 }
@@ -219,7 +260,7 @@ footer {
         padding-right: 15%;
     }
 
-    .bootcamp-intro h1 {
+    .bootcamp-intro h1, .blog-header h1 {
         font-size: 2rem;
     }
 
@@ -237,6 +278,16 @@ footer {
         margin-top: 2vh;
         padding: 1vh 2vw;
     }
+
+    /* Bootcamp blog page */
+    .blog-header h1 {
+        margin-bottom: 0;
+    }
+
+    .post-container {
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+    }
 }
 
 /* Media queries for small screen sizes less than 450px */
@@ -247,6 +298,12 @@ footer {
 
     .bootcamp-intro h2 {
         font-size: 2rem;
+    }
+
+    /* Bootcamp blog page */
+    .blog-header h1 {
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }
 
