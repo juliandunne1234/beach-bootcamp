@@ -135,7 +135,7 @@ footer {
     color: #105ce8;
 }
 
-.btn-blog, .btn-login, .btn-logout {
+.btn-blog, .btn-login, .btn-logout, .btn-signup {
     color: #1a3771dc;
     border: none;
     border-radius: 5px;
@@ -146,7 +146,7 @@ footer {
     padding: 1vh 0;
 }
 
-.btn-blog:hover, .btn-login:hover, .btn-logout:hover {
+.btn-blog:hover, .btn-login:hover, .btn-logout:hover, .btn-signup:hover {
     color: darkorange;
     border: none;
     background: #1a3771dc;
@@ -287,7 +287,7 @@ footer {
 
 /* Signin and Logout pages */
 
-.btn-login, .btn-logout {
+.btn-login, .btn-logout, .btn-signup {
     margin: auto;
 }
 
@@ -344,9 +344,9 @@ footer {
         padding: 1vh 2vw;
     }
 
-    .btn-login,.btn-logout {
+    .btn-login,.btn-logout, .btn-signup {
         font-size: 150%;
-        padding: 2vh 8vw;
+        padding: 1.5vh 8vw;
     }
 
     /* Bootcamp blog page */
@@ -376,81 +376,3 @@ footer {
         margin-right: 5%;
     }
 }
-
-/* ______________________________________________ */
-
-/* .light-bg {
-    background-color: #fff;
-}
-
-
-.main-bg {
-    background-color: #F9FAFC;
-}
-
-.card {
-    border: none;
-    background-color: transparent;
-}
-
-.image-container {
-    position: relative;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
-}
-
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
-.post-link {
-    text-decoration: none;
-    color: #445261;
-}
-
-.post-link:hover,
-.page-link {
-    color: #E84610;
-}
-
-.post-title {
-    margin-top: 20%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
-
-.link {
-    color: #23BBBB;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
-
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-} */
