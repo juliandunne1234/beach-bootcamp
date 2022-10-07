@@ -18,17 +18,23 @@
 
 /* Header and Footer */
 
-footer {
-    color: #1a3771dc;
+.padding-outer {
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
 
-.contact-outer {
-    padding-left: 2vh;
+footer {
+    color: #1a3771dc;
 }
 
 .contact-detail, .social-media-detail {
     font-size: 1.25rem;
     font-weight: 500;
+}
+
+.social-media-outer {
+    text-align: right;
+    padding-right: 2vw;
 }
 
 .social-media {
@@ -129,7 +135,7 @@ footer {
     color: #105ce8;
 }
 
-.btn-blog, .btn-login {
+.btn-blog, .btn-login, .btn-logout {
     color: #1a3771dc;
     border: none;
     border-radius: 5px;
@@ -140,7 +146,7 @@ footer {
     padding: 1vh 0;
 }
 
-.btn-blog:hover, .btn-login:hover {
+.btn-blog:hover, .btn-login:hover, .btn-logout:hover {
     color: darkorange;
     border: none;
     background: #1a3771dc;
@@ -279,9 +285,9 @@ footer {
     font-size: 0.75rem;
 }
 
-/* Signup page */
+/* Signin and Logout pages */
 
-.btn-login {
+.btn-login, .btn-logout {
     margin: auto;
 }
 
@@ -294,6 +300,13 @@ footer {
 
 /* Media queries for small screen sizes less than 576px */
 @media screen and (max-width: 576px) {
+    /* Footer */
+    .social-media-outer {
+        text-align: center;
+        padding-right: 0;
+    }
+    
+    /* Index page */
     .hide-contact {
         display: none;
     }
@@ -331,7 +344,7 @@ footer {
         padding: 1vh 2vw;
     }
 
-    .btn-login {
+    .btn-login,.btn-logout {
         font-size: 150%;
         padding: 2vh 8vw;
     }
