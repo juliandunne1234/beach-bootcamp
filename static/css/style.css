@@ -129,7 +129,7 @@ footer {
     color: #105ce8;
 }
 
-.btn-blog {
+.btn-blog, .btn-login {
     color: #1a3771dc;
     border: none;
     border-radius: 5px;
@@ -140,7 +140,7 @@ footer {
     padding: 1vh 0;
 }
 
-.btn-blog:hover {
+.btn-blog:hover, .btn-login:hover {
     color: darkorange;
     border: none;
     background: #1a3771dc;
@@ -233,6 +233,58 @@ footer {
     transform: scale(1.05);
 }
 
+/* Blog Post Detail */
+
+.post-container-full {
+    background-color: #1a3771dc;
+    color: darkorange;
+    margin: auto;
+    padding: 2vh 0;
+}
+
+.post-detail-image {
+    background: no-repeat center 50%;
+    background-image: url('https://res.cloudinary.com/dwc6uclyo/image/upload/v1664736535/post-image_lzmhts.jpg');
+    background-size: cover;
+    height: 40vh;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+.post-subtitle {
+    font-size: 0.75rem;
+}
+
+.color-gradient {
+    margin: auto;
+    padding-top: 5vh;
+    background: linear-gradient(to bottom, #1a3771dc 20%, darkorange 60%);
+}
+
+.message-container-outer {
+    margin: auto;
+    background-color: darkorange;
+    color: #1a3771dc;
+    padding-bottom: 1vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.message-container-full {
+    color: #1a3771dc;
+    margin: auto;
+}
+
+.post-subtitle {
+    font-size: 0.75rem;
+}
+
+/* Signup page */
+
+.btn-login {
+    margin: auto;
+}
+
 /* Media queries for medium screen sizes less than 798px */
 @media screen and (max-width: 798px) {
     .bootcamp-intro h1, .blog-header h1 {
@@ -256,7 +308,7 @@ footer {
     }
 
     .intro-text, .section-divider {
-        padding-left: 15%;
+        padding-left: 50%;
         padding-right: 15%;
     }
 
@@ -277,6 +329,11 @@ footer {
         font-size: 150%;
         margin-top: 2vh;
         padding: 1vh 2vw;
+    }
+
+    .btn-login {
+        font-size: 150%;
+        padding: 2vh 8vw;
     }
 
     /* Bootcamp blog page */
@@ -359,17 +416,6 @@ footer {
 .post-subtitle {
     margin-left: 5%;
     color: lightgray;
-}
-
-.btn-signup {
-    background-color: #23BBBB;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
 }
 
 .link {

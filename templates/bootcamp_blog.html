@@ -17,7 +17,7 @@
             <div class="row justify-content-center">
                 {% for post in post_list %}
                 <div class="col-lg-4 col-md-6 text-center">
-                    <a href="#" class="post-link">
+                    <a href="{% url 'bootcamp_post' post.slug %}" class="post-link">
                         <div class="post-container transform-post">
                             {% if "placeholder" in post.featured_image.url %}
                             <img class="post-img-top"
@@ -26,9 +26,9 @@
                             <img class="post-img-top" src="{{ post.featured_image.url }}">
                             {% endif %}
                             <div class="post-content-container">
-                                    <h2>
-                                        {{ post.title }}
-                                    </h2>
+                                <h2>
+                                    {{ post.title }}
+                                </h2>
                                 <div class="col-sm-8 offset-sm-2 post-content-divider"></div>
                                 <p>
                                     {{ post.content | safe }}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container-fluid">
+    <div class="row text-center">
+        <div class="col-sm-6 offset-sm-3 blog-header">
+            <h1 class="post-title">Blog Post - {{ post.title }}</h1>
+        </div>
+    </div>
+    <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
+</section>
+
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+            <div class="post-detail-image">
+            </div>
+            <div class="row post-container-full">
+                <div class="">
+                    <p class="post-subtitle">Posted by {{ post.author }} on <b>{{ post.created_on }}</b></p>
+                    <p class="post-content">{{ post.content | safe }}
+                        {% with comments.count as total_comments %}
+                            <strong><i class="far fa-comments"></i>
+                                {{ total_comments }}
+                            </strong>
+                        {% endwith %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+            <div class="color-gradient">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+            <div class="row message-container-outer">
+                <h3>Comments:</h3>
+                <div class="row message-container-full">
+                    {% for comment in comments %}
+                    <div class="">
+                        <p class="message-subtitle">
+                            Comment by {{ comment.name }} on <b>{{ comment.created_on }}</b>
+                        </p>
+                        <p class="message-content">
+                            {{ comment.body | linebreaks }}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
+</section>
+
+{% endblock %}
