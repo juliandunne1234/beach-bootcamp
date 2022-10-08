@@ -84,10 +84,10 @@ footer {
 }
 
 .cover-text:hover {
-    background-color: darkorange
+    background-color: darkorange;
 }
 
-.sign-up {
+.sign-up-link {
     text-decoration: none;
 }
 
@@ -128,14 +128,32 @@ footer {
     padding-bottom: 2.5vh;
 }
 
-/* Bootcamp information with button link to Blog */
+/* Bootcamp information with link to Blog */
 
 .bootcamp-intro h2 {
     font-size: 2rem;
     color: #105ce8;
 }
 
-.btn-blog, .btn-login, .btn-logout, .btn-signup {
+.btn-blog {
+    color: #1a3771dc;
+    border: none;
+    border-radius: 5px;
+    background: darkorange;
+    font-size: 200%;
+    font-weight: 500;
+    margin-top: 1vh;
+    padding: 1vh 4vw;
+    text-decoration: none;
+}
+
+.btn-blog:hover {
+    color: darkorange;
+    border: none;
+    background: #1a3771dc;
+}
+
+.btn-login, .btn-logout, .btn-signup {
     color: #1a3771dc;
     border: none;
     border-radius: 5px;
@@ -146,7 +164,7 @@ footer {
     padding: 1vh 0;
 }
 
-.btn-blog:hover, .btn-login:hover, .btn-logout:hover, .btn-signup:hover {
+.btn-login:hover, .btn-logout:hover, .btn-signup:hover {
     color: darkorange;
     border: none;
     background: #1a3771dc;
@@ -272,8 +290,6 @@ footer {
     background-color: darkorange;
     color: #1a3771dc;
     padding-bottom: 1vh;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
 .message-container-full {
@@ -281,8 +297,32 @@ footer {
     margin: auto;
 }
 
+.comment-divider {
+    border-top: 0.25rem solid #1a3771dc;
+    margin-top: 0.5vh;
+    padding-bottom: 0.5vh;
+}
+
 .post-subtitle {
     font-size: 0.75rem;
+}
+
+.btn-add-comment {
+    color: darkorange;
+    border: none;
+    border-radius: 5px;
+    background: #1a3771dc;
+    font-size: 200%;
+    font-weight: 500;
+    margin-top: 1vh;
+    padding: 1vh 4vw;
+    text-decoration: none;
+}
+
+.btn-add-comment:hover {
+    color: #1a3771dc;
+    border: none;
+    background: darkorange;
 }
 
 /* Signin and Logout pages */

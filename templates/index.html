@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-sm-2 offset-sm-8">
                 <div class="cover-text text-center">
-                    <a href="{% url 'bootcamp_blog' %}" class="sign-up">
+                    <a href="{% url 'bootcamp_blog' %}" class="sign-up-link">
                         <h5>Beach Bootcamps</h5>
                         <p>Sign Up today!</p>
                     </a>
@@ -47,14 +47,19 @@
     <div class="row">
         <div class="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 intro-text text-center">
             <h2>Every Bootcamp Changes</h2>
-            <p>Each bootcamp is adapted to include the ideas of the participants. This is an important aspect of each
+            <p>
+                Each bootcamp is adapted to include the ideas of the participants. This is an important aspect of each
                 bootcamp. Participants are encouraged to post ideas to the bootcamp blog. The blog is then referenced during
                 planning of each bootcamp. The only part you won't change is the difficulty which will always be
-                maximum!</p>
+                maximum!
+            </p>
+            <!-- <div class="col-sm-6 offset-sm-3 btn-blog"> -->
+                <a href="{% url 'bootcamp_blog' %}" class="btn-blog">
+                    See Our Blog
+                </a>
+            <!-- </div>  -->
+            
         </div>
-    </div>
-    <div class="button-container-div">
-        <button class="btn-blog col-sm-4 offset-sm-4">See Our Blog</button>
     </div>
     <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
 </section>

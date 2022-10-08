@@ -1,6 +1,7 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
+{% load crispy_forms_tags %}
+
 <section class="container-fluid">
     <div class="row text-center">
         <div class="col-sm-6 offset-sm-3 blog-header">
@@ -38,8 +39,14 @@
     <div class="row">
         <div class="col-sm-8 offset-sm-2">
             <div class="row message-container-outer">
-                <h3>Comments:</h3>
+                <h3 class="text-center">Comments:</h3>
+                <div class="col-sm-6 offset-sm-3 comment-divider"></div>
                 <div class="row message-container-full">
+                    {% if commented %}
+                    <div class="alert alert-success" role="alert">
+                        Your comment is awaiting approval
+                    </div>
+                    {% else %}
                     {% for comment in comments %}
                     <div class="">
                         <p class="message-subtitle">
@@ -50,6 +57,23 @@
                         </p>
                     </div>
                     {% endfor %}
+                </div>
+            </div>
+            <div class="row message-container-outer">
+                {% if user.is_authenticated %}
+                    <div class="col-sm-4">
+                        <h3>Add a comment:</h3>
+                        <p>Logged in: <b>{{ user.username }}</b></p>
+                    </div>
+                    <div class="col-sm-8 text-center">
+                        <form method="post">
+                            {{ comment_form | crispy }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn-add-comment">Submit</button>
+                        </form>
+                    </div>
+                {% endif %}   
+                {% endif %}
                 </div>
             </div>
         </div>
