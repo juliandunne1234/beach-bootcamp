@@ -1,16 +1,13 @@
 from django.db import models
-from django.contrib.auth.models import User
 
-
-class Bootcamp(models.Model):
-    """
-    Bootcamp model
-    """
-    bootcamp_date = models.DateField()
-    max_capacity = models.IntegerField(default=12)
-
-    def __str__(self):
-        return f"{self.bootcamp_date}"
+bootcamp_choices = (
+    ("November", "November"),
+    ("December", "December"),
+    ("January", "January"),
+    ("February", "February"),
+    ("March", "March"),
+    ("April", "April"),
+    )
 
 
 class SignUp(models.Model):
@@ -18,9 +15,8 @@ class SignUp(models.Model):
     SignUp model
     """
     full_name = models.CharField(max_length=80)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="signed_up")
-    bootcamp = models.ForeignKey(Bootcamp, on_delete=models.CASCADE, related_name="bootcamps")
-    email = models.EmailField(unique=True, default='')
+    bootcamp_date = models.CharField(max_length=10, choices=bootcamp_choices, default='')
+    email = models.EmailField(default='')
     signup_date = models.DateField(auto_now_add=True)
 
     def __str__(self):

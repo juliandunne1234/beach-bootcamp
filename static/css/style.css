@@ -46,6 +46,11 @@ footer {
     color: #105ce8;
 }
 
+/* Message constants background colour */
+.temp-background {
+    background-color: rgba(255, 166, 0, 0.648);
+}
+
 /* Home page image and cover text */
 
 .container-fluid {
@@ -259,7 +264,7 @@ footer {
 
 /* Blog Post Detail */
 
-.post-container-full {
+.post-container-full, .registration-container-full {
     background-color: #1a3771dc;
     color: darkorange;
     margin: auto;
@@ -331,10 +336,42 @@ footer {
     margin: auto;
 }
 
+/* Registration page */
+
+.registration-container-full {
+    border-radius: 10px;
+}
+
+.registration-text {
+    font-weight: 400;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    padding-bottom: 1vh;
+}
+
+.btn-register {
+    color: #1a3771dc;
+    border: none;
+    border-radius: 5px;
+    background: darkorange;
+    font-size: 150%;
+    font-weight: 500;
+    margin: 2.5vh 0 1.5vh 0;
+    padding: 0.5vh 3vw;
+    text-decoration: none;
+}
+
+.btn-register:hover {
+    color: darkorange;
+    border: none;
+    background: #1a3771dc;
+}
+
 /* Media queries for medium screen sizes less than 798px */
 @media screen and (max-width: 798px) {
     .bootcamp-intro h1, .blog-header h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
 }
 
@@ -356,13 +393,10 @@ footer {
     }
 
     .section-divider {
-        margin-left: 25vw;
-        margin-right: 25vw;
-    }
-
-    .intro-text, .section-divider {
-        padding-left: 50%;
-        padding-right: 15%;
+        width: 80%;
+        margin: auto;
+        margin-top: 2vh;
+        margin-bottom: 1vh;
     }
 
     .bootcamp-intro h1, .blog-header h1 {
@@ -397,6 +431,20 @@ footer {
     .post-container {
         margin-left: 7.5%;
         margin-right: 7.5%;
+    }
+
+    /* Registration page */
+
+    .registration-container {
+        width: 80%;
+        margin: auto;
+    }
+
+    .registration-text {
+        width: 70%;
+        margin: auto;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
     }
 }
 

@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block content %}
+
+{% load crispy_forms_tags %}
+
+<section class="container-fluid">
+    <div class="row text-center">
+        <div class="col-sm-6 offset-sm-3 blog-header">
+            <h1 class="post-title">Bootcamp Registration</h1>
+            <p class="registration-text">Bootcamp is on the first Saturday of each month. Places are limited
+                so pick a month and register today!</p>
+        </div>
+    </div>
+    <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
+</section>
+
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2 registration-container">
+            <div class="row registration-container-full">
+                <form method="POST">
+
+                    {{ signup_form | crispy }}
+                    {% csrf_token %}
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn-register">
+                            Register
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
+</section>
+
+{% endblock %}
