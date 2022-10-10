@@ -31,7 +31,7 @@ class BootcampRegistration(View):
             request,
             "registration.html",
             {
-                "signup_form": SignUpForm()
+                "signup_form": SignUpForm(),
             }
         )
     
