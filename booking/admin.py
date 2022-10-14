@@ -1,11 +1,27 @@
+# from django.contrib import admin
+# from .models import SignUp
+
+
+# @admin.register(SignUp)
+# class SignUpAdmin(admin.ModelAdmin):
+#     """
+#     SignUpAdmin class
+#     """
+#     list_display = ('full_name', 'bootcamp_date', 'email', 'signup_date')
+#     list_filter = ('full_name', 'bootcamp_date', 'email', 'signup_date')
+
+##################################################################################
+
 from django.contrib import admin
-from .models import SignUp
+from .models import BookingBootcamp
+
+# @admin.register(Bootcamp_Date)
+# class BootcampDateAdmin(admin.ModelAdmin):
+
+#     list_display = ('bootcamp_date',)
 
 
-@admin.register(SignUp)
-class SignUpAdmin(admin.ModelAdmin):
-    """
-    SignUpAdmin class
-    """
-    list_display = ('full_name', 'bootcamp_date', 'email', 'signup_date')
-    list_filter = ('full_name', 'bootcamp_date', 'email', 'signup_date')
+@admin.register(BookingBootcamp)
+class BookingAdmin(admin.ModelAdmin):
+
+    list_display = ('user', 'bootcamp_date')

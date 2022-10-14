@@ -13,13 +13,18 @@
     <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
 </section>
 
+<!-- Registration form to be submitted to register for bootcamp -->
 <section class="container-fluid">
     <div class="row">
         <div class="col-sm-8 offset-sm-2 registration-container">
             <div class="row registration-container-full">
                 <form method="POST">
 
-                    {{ signup_form | crispy }}
+                    {{ user_form | crispy }}
+                    {{ booking_form | crispy }}
+                    
+                    <!-- ################################################# -->
+                    <!-- {{ signup_form | crispy }} -->
                     {% csrf_token %}
                     
                     <div class="text-center">

@@ -21,7 +21,19 @@
     <div class="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 text-center">
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
-        {{ form.as_p }}
+        <!-- {{ form.as_p }} -->
+        <div>
+          {{ form.username }}
+        </div>
+        <div>
+          {{ form.email }}
+        </div>
+        <div>
+          {{ form.password1 }}
+        </div>
+        <div>
+          {{ form.password2 }}
+        </div>
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
