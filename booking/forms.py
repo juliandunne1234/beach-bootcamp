@@ -9,20 +9,62 @@
 #         fields = ('full_name', 'bootcamp_date', 'email')
 
 ##########################################################################
+# from django import forms
+# from django.contrib.auth.models import User
+# from .models import BookingBootcamp
+
+
+# class UserForm(forms.ModelForm):
+    
+#     class Meta:
+#         model = User
+#         fields = ('username', 'email')
+
+
+# class BookingForm(forms.ModelForm):
+    
+#     class Meta:
+#         model = BookingBootcamp
+#         fields = ('bootcamp_date',)
+
+
+##########################################################################
+
+# from django import forms
+# from django.contrib.auth.models import User
+# from .models import BookingBootcamp
+
+
+# class UserForm(forms.ModelForm):
+    
+#     class Meta:
+#         model = User
+#         fields = ('username', 'email')
+
+
+# class BookingForm(forms.ModelForm):
+    
+#     class Meta:
+#         model = BookingBootcamp
+#         fields = ('bootcamp_date',)
+
+##########################################################################
+
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import BookingBootcamp
+from .models import BootcampDate
 
 
-class UserForm(forms.ModelForm):
+class CreateUserForm(UserCreationForm):
     
     class Meta:
         model = User
-        fields = ('username', 'email')
+        fields = ['username', 'email', 'password1', 'password2']
 
 
-class BookingForm(forms.ModelForm):
+class BookingDateForm(forms.ModelForm):
     
     class Meta:
-        model = BookingBootcamp
-        fields = ('bootcamp_date',)
+        model = BootcampDate
+        fields = ('next_bootcamp',)

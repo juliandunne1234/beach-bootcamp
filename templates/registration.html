@@ -20,9 +20,29 @@
             <div class="row registration-container-full">
                 <form method="POST">
 
-                    {{ user_form | crispy }}
-                    {{ booking_form | crispy }}
-                    
+                    <!-- {{ user_form | crispy }}
+                    {{ booking_form | crispy }} -->
+                    <div>
+                        {{ registration_form.username.label }}
+                        {{ registration_form.username }}
+                    </div>
+                    <div>
+                        {{ registration_form.email.label }}
+                        {{ registration_form.email }}
+                    </div>
+                    <div>
+                        {{ registration_form.password1.label }}
+                        {{ registration_form.password1 }}
+                    </div>
+                    <div>
+                        {{ registration_form.password2.label }}
+                        {{ registration_form.password2 }}
+                    </div>
+                    <div>
+                        {{ next_bootcamp.label }}
+                        {{ next_bootcamp }}
+                    </div>
+                
                     <!-- ################################################# -->
                     <!-- {{ signup_form | crispy }} -->
                     {% csrf_token %}

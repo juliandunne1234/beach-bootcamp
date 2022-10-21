@@ -85,11 +85,62 @@
 
 ###############################################################################
 
+# from django.shortcuts import render, reverse
+# from django.views import View
+# from django.http import HttpResponseRedirect
+# from .models import BookingBootcamp
+# from .forms import BookingForm, UserForm
+
+
+# class BootcampRegistration(View):
+
+#     def get(self, request, *args, **kwargs):
+
+#         return render(
+#             request,
+#             "registration.html",
+#             {
+#                 "booking_form": BookingForm(),
+#                 "user_form": UserForm(),
+#             }
+#         )
+    
+#     def post(self, request, *args, **kwargs):
+
+#         user_registration_form = UserForm(data=request.POST)
+#         booking_registration_form = BookingForm(data=request.POST)
+
+#         if user_registration_form.is_valid() and booking_registration_form.is_valid():
+#             user_name = request.POST.get('username')
+#             email = request.POST.get('email')
+#             bootcamp_date = request.POST.get('bootcamp_date')
+#             user = user_registration_form.save()
+#             user_booking = booking_registration_form.save(commit=False)
+#             user_booking.user = user
+#             user_booking.save()
+
+#             return HttpResponseRedirect(
+#                     reverse("index",)               
+#                 )
+
+#         else:
+#             return render(
+#             request,
+#             "registration.html",
+#             {
+#                 "booking_form": BookingForm(),
+#                 "user_form": UserForm(),
+#             }
+#         )
+
+###############################################################################
+
 from django.shortcuts import render, reverse
 from django.views import View
 from django.http import HttpResponseRedirect
-from .models import BookingBootcamp
-from .forms import BookingForm, UserForm
+from django.contrib.auth.forms import UserCreationForm
+from .models import BootcampDate
+from .forms import CreateUserForm, BookingDateForm
 
 
 class BootcampRegistration(View):
@@ -100,22 +151,17 @@ class BootcampRegistration(View):
             request,
             "registration.html",
             {
-                "booking_form": BookingForm(),
-                "user_form": UserForm(),
+                "registration_form": CreateUserForm(),
+                "next_bootcamp": BookingDateForm()
             }
-        )
+        )  
     
+
     def post(self, request, *args, **kwargs):
 
-        user_registration_form = UserForm(data=request.POST)
-        booking_registration_form = BookingForm(data=request.POST)
-
-        if user_registration_form.is_valid() and booking_registration_form.is_valid():
-            user_name = request.POST.get('username')
-            email = request.POST.get('email')
-            bootcamp_date = request.POST.get('bootcamp_date')
+        user_registration_form = CreateUserForm(data=request.POST)
+        if user_registration_form.is_valid:
             user_registration_form.save()
-            booking_registration_form.save()
 
             return HttpResponseRedirect(
                     reverse("index",)               
@@ -123,10 +169,9 @@ class BootcampRegistration(View):
 
         else:
             return render(
-            request,
-            "registration.html",
-            {
-                "booking_form": BookingForm(),
-                "user_form": UserForm(),
-            }
-        )
+                request,
+                "registration.html",
+                {
+                    "registration_form": CreateUserForm()
+                }
+            )   

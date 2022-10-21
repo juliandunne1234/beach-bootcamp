@@ -12,8 +12,8 @@
 
 ##################################################################################
 
-from django.contrib import admin
-from .models import BookingBootcamp
+# from django.contrib import admin
+# from .models import BookingBootcamp
 
 # @admin.register(Bootcamp_Date)
 # class BootcampDateAdmin(admin.ModelAdmin):
@@ -21,7 +21,24 @@ from .models import BookingBootcamp
 #     list_display = ('bootcamp_date',)
 
 
-@admin.register(BookingBootcamp)
-class BookingAdmin(admin.ModelAdmin):
+# @admin.register(BookingBootcamp)
+# class BookingAdmin(admin.ModelAdmin):
 
-    list_display = ('user', 'bootcamp_date')
+#     list_display = ('user', 'bootcamp_date')
+
+##################################################################################
+
+from django.contrib import admin
+# from .models import BootcampDate, BookingBootcampDate
+from .models import BootcampDate
+
+@admin.register(BootcampDate)
+class BootcampDateAdmin(admin.ModelAdmin):
+
+    list_display = ('next_bootcamp',)
+
+
+# @admin.register(BookingBootcampDate)
+# class BookingBootcampDateAdmin(admin.ModelAdmin):
+
+#     list_display = ('user', 'bootcamp_date')

@@ -30,13 +30,22 @@ from django.contrib.auth.models import User
 import datetime
 
 
-class BookingBootcamp(models.Model):
-    
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_registration")
-    bootcamp_date = models.DateField(null=True)
+class BootcampDate(models.Model):
 
-    class Meta:
-        unique_together = ['user', 'bootcamp_date']
+    next_bootcamp = models.DateField(null=True)
 
     def __str__(self):
-        return self.user.username
+        return f"{self.next_bootcamp}"
+
+
+# class BookingBootcampDate(models.Model):
+    
+#     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_registration")
+#     bootcamp_date = models.ForeignKey(BootcampDate, on_delete=models.CASCADE, related_name="next_bootcamp")
+
+#     class Meta:
+#         unique_together = ['user', 'bootcamp_date']
+
+#     def __str__(self):
+#         return self.user.username
+
