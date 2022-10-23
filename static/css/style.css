@@ -152,7 +152,7 @@ footer {
     text-decoration: none;
 }
 
-.btn-blog:hover {
+/* .btn-blog:hover {
     color: darkorange;
     border: none;
     background: #1a3771dc;
@@ -173,7 +173,7 @@ footer {
     color: darkorange;
     border: none;
     background: #1a3771dc;
-}
+} */
 
 /* All 4 types of workout incorporated into a beach bootcamp */
 
@@ -264,7 +264,7 @@ footer {
 
 /* Blog Post Detail */
 
-.post-container-full, .registration-container-full {
+.post-container-full, .registration-container-full, .signup-container-full {
     background-color: #1a3771dc;
     color: darkorange;
     margin: auto;
@@ -338,7 +338,7 @@ footer {
 
 /* Registration page */
 
-.registration-container-full {
+.post-container-full, .registration-container-full, .signup-container-full {
     border-radius: 10px;
 }
 
@@ -350,7 +350,7 @@ footer {
     padding-bottom: 1vh;
 }
 
-.btn-register {
+.btn-login, .btn-logout, .btn-signup, .btn-register {
     color: #1a3771dc;
     border: none;
     border-radius: 5px;
@@ -362,7 +362,7 @@ footer {
     text-decoration: none;
 }
 
-.btn-register:hover {
+.btn-login:hover, .btn-logout:hover, .btn-signup:hover, .btn-register:hover {
     color: darkorange;
     border: none;
     background: #1a3771dc;
@@ -418,10 +418,10 @@ footer {
         padding: 1vh 2vw;
     }
 
-    .btn-login,.btn-logout, .btn-signup {
+    /* .btn-login,.btn-logout, .btn-signup {
         font-size: 150%;
         padding: 1.5vh 8vw;
-    }
+    } */
 
     /* Bootcamp blog page */
     .blog-header h1 {

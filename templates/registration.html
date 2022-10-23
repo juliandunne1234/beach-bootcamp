@@ -17,36 +17,12 @@
 <section class="container-fluid">
     <div class="row">
         <div class="col-sm-8 offset-sm-2 registration-container">
+            {% if user.is_authenticated %}
             <div class="row registration-container-full">
                 <form method="POST">
-
-                    <!-- {{ user_form | crispy }}
-                    {{ booking_form | crispy }} -->
-                    <div>
-                        {{ registration_form.username.label }}
-                        {{ registration_form.username }}
-                    </div>
-                    <div>
-                        {{ registration_form.email.label }}
-                        {{ registration_form.email }}
-                    </div>
-                    <div>
-                        {{ registration_form.password1.label }}
-                        {{ registration_form.password1 }}
-                    </div>
-                    <div>
-                        {{ registration_form.password2.label }}
-                        {{ registration_form.password2 }}
-                    </div>
-                    <div>
-                        {{ next_bootcamp.label }}
-                        {{ next_bootcamp }}
-                    </div>
-                
-                    <!-- ################################################# -->
-                    <!-- {{ signup_form | crispy }} -->
+                    {{ registration_form | crispy }}
+                    {{ booking_details | crispy }}
                     {% csrf_token %}
-                    
                     <div class="text-center">
                         <button type="submit" class="btn-register">
                             Register
@@ -54,9 +30,15 @@
                     </div>
                 </form>
             </div>
+            {% else %}
+            <div class="row registration-container-full">
+                <h3 class="post-title text-center">Create an account to register</h3>
+            </div>
+            <p class="registration-text text-center">
+                Please <a href="{% url 'account_signup' %}">sign up</a> first.
+            </p>
+            {% endif %}
         </div>
-    </div>
-    
     <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
 </section>
 

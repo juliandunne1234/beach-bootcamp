@@ -29,16 +29,15 @@
 ##################################################################################
 
 from django.contrib import admin
-# from .models import BootcampDate, BookingBootcampDate
-from .models import BootcampDate
+from .models import BootcampNextDate12, BookBootcamp12
 
-@admin.register(BootcampDate)
-class BootcampDateAdmin(admin.ModelAdmin):
+@admin.register(BootcampNextDate12)
+class BootcampNextDateAdmin(admin.ModelAdmin):
 
     list_display = ('next_bootcamp',)
 
 
-# @admin.register(BookingBootcampDate)
-# class BookingBootcampDateAdmin(admin.ModelAdmin):
+@admin.register(BookBootcamp12)
+class BookBootcampAdmin(admin.ModelAdmin):
 
-#     list_display = ('user', 'bootcamp_date')
+    list_display = ('name', 'email', 'bootcamp_date')

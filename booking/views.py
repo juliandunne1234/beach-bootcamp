@@ -138,9 +138,9 @@
 from django.shortcuts import render, reverse
 from django.views import View
 from django.http import HttpResponseRedirect
-from django.contrib.auth.forms import UserCreationForm
-from .models import BootcampDate
-from .forms import CreateUserForm, BookingDateForm
+from django.contrib.auth.models import User
+from .models import BootcampNextDate12, BookBootcamp12
+from .forms import BookBootcampForm
 
 
 class BootcampRegistration(View):
@@ -151,17 +151,21 @@ class BootcampRegistration(View):
             request,
             "registration.html",
             {
-                "registration_form": CreateUserForm(),
-                "next_bootcamp": BookingDateForm()
+                "booking_details": BookBootcampForm()
             }
         )  
     
 
     def post(self, request, *args, **kwargs):
 
-        user_registration_form = CreateUserForm(data=request.POST)
-        if user_registration_form.is_valid:
-            user_registration_form.save()
+        bootcamp_booking_details = BookBootcampForm(data=request.POST)
+        
+        if bootcamp_booking_details.is_valid():
+
+            bootcamp_booking_details.instance.name = request.user.username
+            bootcamp_booking_details.email = request.POST.get('email')
+            bootcamp_booking_details.bootcamp_date = request.POST.get('bootcamp_date')
+            bootcamp_booking_details.save()
 
             return HttpResponseRedirect(
                     reverse("index",)               
@@ -172,6 +176,6 @@ class BootcampRegistration(View):
                 request,
                 "registration.html",
                 {
-                    "registration_form": CreateUserForm()
+                    "booking_details": BookBootcampForm()
                 }
             )   
