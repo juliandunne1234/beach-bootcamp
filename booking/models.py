@@ -30,7 +30,7 @@ from django.contrib.auth.models import User
 import datetime
 
 
-class BootcampNextDate12(models.Model):
+class BootcampNextDate13(models.Model):
 
     next_bootcamp = models.DateField(null=True)
 
@@ -38,11 +38,11 @@ class BootcampNextDate12(models.Model):
         return f"{self.next_bootcamp}"
 
 
-class BookBootcamp12(models.Model):
+class BookBootcamp13(models.Model):
     
     name = models.CharField(max_length=80)
     email = models.EmailField()
-    bootcamp_date = models.ForeignKey(BootcampNextDate12, on_delete=models.CASCADE, related_name="bootcamp_date")
+    bootcamp_date = models.ForeignKey(BootcampNextDate13, on_delete=models.CASCADE, related_name="bootcamp_date")
 
     class Meta:
         unique_together = ['name', 'bootcamp_date']

@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block content %}
+
+<section class="container-fluid">
+    <div class="row text-center">
+        <div class="col-sm-6 offset-sm-3 blog-header">
+            <h1 class="post-title">Cancel Registration</h1>
+            <p class="registration-text">Places are limited so if you can't attend please let us know.</p>
+        </div>
+    </div>
+    <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
+</section>
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2 registration-container">
+            <div class="row registration-container-full">
+                <h3 class="post-title text-center"></h3>
+                <table>
+                    {% for registration in current_registration %}
+                    <form method="POST" action="{{ registration.id }}">
+                        {% csrf_token %}
+                        <tr>
+                            <td>
+                                <h2>ID: {{ registration.id }}</h2>
+                            </td>
+                            <td>
+                                <h2>Username: {{ registration.name }}</h2>
+                            </td>
+                            <td>
+                                <h2>Email {{ registration.email }}</h2>
+                            </td>
+                            <td>
+                                <h2>Bootcamp {{ registration.bootcamp_date }}</h2>
+                            </td>
+                            <td>
+                                <button type="submit">Delete Registration</button>
+                            </td>
+                        </tr>
+                    </form>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
+</section>
+
+{% endblock %}

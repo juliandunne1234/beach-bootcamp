@@ -135,11 +135,11 @@
 
 ###############################################################################
 
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.views import View
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
-from .models import BootcampNextDate12, BookBootcamp12
+from .models import BootcampNextDate13, BookBootcamp13
 from .forms import BookBootcampForm
 
 
@@ -151,7 +151,7 @@ class BootcampRegistration(View):
             request,
             "registration.html",
             {
-                "booking_details": BookBootcampForm()
+                "booking_details": BookBootcampForm(),
             }
         )  
     
@@ -179,3 +179,28 @@ class BootcampRegistration(View):
                     "booking_details": BookBootcampForm()
                 }
             )   
+
+
+class CancelRegistration(View):
+
+    def get(self, request, *args, **kwargs):
+
+        current_registration = BookBootcamp13.objects.all()
+
+        return render(
+            request,
+            "cancel_registration.html",
+            {
+                "current_registration": current_registration,
+            }
+        )
+
+    def post(self, request, id, *args, **kwargs):
+
+        id = id
+        user_registration = get_object_or_404(BookBootcamp13, pk=id)
+        user_registration.delete()
+
+        current_registration = BookBootcamp13.objects.all()
+
+        return HttpResponseRedirect(reverse("index"))
