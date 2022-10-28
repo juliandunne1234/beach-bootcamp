@@ -60,3 +60,9 @@ class BookBootcampForm(forms.ModelForm):
     class Meta:
         model = BookBootcamp13
         fields = ('email', 'bootcamp_date')
+
+class UpdateBookingForm(forms.ModelForm):
+    
+    class Meta:
+        model = BookBootcamp13
+        fields = ('bootcamp_date',)

@@ -140,7 +140,7 @@ from django.views import View
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from .models import BootcampNextDate13, BookBootcamp13
-from .forms import BookBootcampForm
+from .forms import BookBootcampForm, UpdateBookingForm
 
 
 class BootcampRegistration(View):
@@ -204,3 +204,33 @@ class CancelRegistration(View):
         current_registration = BookBootcamp13.objects.all()
 
         return HttpResponseRedirect(reverse("index"))
+
+
+class UpdateRegistration(View):
+
+    def get(self, request, *args, **kwargs):
+
+        current_registration = BookBootcamp13.objects.all()
+
+        return render(
+            request,
+            "update_registration.html",
+            {
+                "current_registration": current_registration,
+                "booking_details": BookBootcampForm(),
+            }
+        )
+
+
+def update_registration(request, id):
+    item = get_object_or_404(BookBootcamp13, pk=id)
+    if request.method == 'POST':
+        form = UpdateBookingForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(
+                    reverse("index",)               
+                )
+    return HttpResponseRedirect(
+                    reverse("index",)               
+                )
