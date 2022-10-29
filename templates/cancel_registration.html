@@ -33,6 +33,10 @@
                                 <button type="submit" class="btn-register">Delete Registration</button>
                             </td>
                     </form>
+                            <td>
+                                <a class="btn-register" href="{% url 'update_registration_email' registration.id %}">Update
+                                </a>
+                            </td>
                     {% endif %}
                     {% empty %}
                         <tr>

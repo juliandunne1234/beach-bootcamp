@@ -138,6 +138,8 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.views import View
 from django.http import HttpResponseRedirect
+from django.contrib import messages
+import datetime
 from django.contrib.auth.models import User
 from .models import BootcampNextDate13, BookBootcamp13
 from .forms import BookBootcampForm, UpdateBookingForm
@@ -165,7 +167,22 @@ class BootcampRegistration(View):
             bootcamp_booking_details.instance.name = request.user.username
             bootcamp_booking_details.email = request.POST.get('email')
             bootcamp_booking_details.bootcamp_date = request.POST.get('bootcamp_date')
-            bootcamp_booking_details.save()
+            queryset = BookBootcamp13.objects.filter(name= bootcamp_booking_details.instance.name, bootcamp_date=bootcamp_booking_details.bootcamp_date)
+            
+            if  queryset:
+                messages.add_message(
+                        request, 
+                        messages.WARNING,
+                        f"Hi, you have already registered for the this bootcamp!"
+                        )
+
+            else:
+                bootcamp_booking_details.save()
+                messages.add_message(
+                        request, 
+                        messages.SUCCESS,
+                        f"Hi, thank you for registering for the bootcamp!"
+                        )
 
             return HttpResponseRedirect(
                     reverse("index",)               
@@ -201,7 +218,11 @@ class CancelRegistration(View):
         user_registration = get_object_or_404(BookBootcamp13, pk=id)
         user_registration.delete()
 
-        current_registration = BookBootcamp13.objects.all()
+        messages.add_message(
+                    request, 
+                    messages.ERROR,
+                    f"Hi, you have cancelled your registration for this bootcamp!"
+                    )
 
         return HttpResponseRedirect(reverse("index"))
 
@@ -223,14 +244,55 @@ class UpdateRegistration(View):
 
 
 def update_registration(request, id):
-    item = get_object_or_404(BookBootcamp13, pk=id)
+    item = get_object_or_404(BookBootcamp13, id=id)
     if request.method == 'POST':
         form = UpdateBookingForm(request.POST, instance=item)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(
-                    reverse("index",)               
+
+            return render(
+                    redirect("index",)               
                 )
+
+
     return HttpResponseRedirect(
                     reverse("index",)               
                 )
+
+
+def update_registration_email(request, id):
+
+    current_registration = get_object_or_404(BookBootcamp13, id=id)
+
+    if request.method == 'POST':
+        form = UpdateBookingForm(request.POST, instance=current_registration)
+        if form.is_valid():
+            form.save()
+
+            return HttpResponseRedirect(
+                    reverse("index",)               
+                )
+
+    form = UpdateBookingForm(instance=current_registration)
+
+    return render(
+            request,
+            "update_registration2.html",
+            {
+                "current_registration": current_registration,
+                "registration_details": UpdateBookingForm(),
+            }
+        )
+    
+    
+    # if request.method == 'POST':
+    #     form = UpdateBookingForm(request.POST, instance=current_registration)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('index')
+    # form = UpdateBookingForm(instance=current_registration)
+    # current_registration = {
+    #     'form': form
+    # }
+    # return render(request, 'update_registration2.html', current_registration)
+

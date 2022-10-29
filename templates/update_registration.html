@@ -17,17 +17,20 @@
                     {% if user.is_authenticated %}
                     {% for registration in current_registration %}
                     {% if user.username == registration.name %}
-                    <form method="POST" action="{{ registration.id }}">
+                    <form method="POST">
                         {% csrf_token %}
                         <tr>
                             <td>
-                                <h4>{{ registration.name }}</h4>
+                                <h4>{{ registration.id }}{{ registration.name }} </h4>
                             </td>
                             <td>
-                                <h4>Bootcamp {{ registration.bootcamp_date }} {{ booking_details.bootcamp_date }}</h4>
+                                <h4>Email: {{ booking_details.email }}</h4>
                             </td>
                             <td>
-                                <button type="submit" class="btn-register">Update Registration</button>
+                                <h4>Bootcamp: {{ registration.bootcamp_date }}</h4>
+                            </td>
+                            <td>
+                                <button type="submit" class="btn-register">Update</button>
                             </td>
                         </tr>
                     </form>
