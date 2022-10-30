@@ -4,7 +4,7 @@
     <div class="row text-center">
         <div class="col-sm-6 offset-sm-3 blog-header">
             <h1 class="post-title">Update Registration</h1>
-            <p class="registration-text">Update your booking registration below.</p>
+            <p class="registration-text">Contact is done by email. Update it below if required.</p>
         </div>
     </div>
     <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
@@ -14,38 +14,23 @@
         <div class="col-sm-8 offset-sm-2 registration-container">
             <div class="row registration-container-full text-center">
                 <table>
-                    {% if user.is_authenticated %}
-                    {% for registration in current_registration %}
-                    {% if user.username == registration.name %}
                     <form method="POST">
-                        {% csrf_token %}
-                        <tr>
-                            <td>
-                                <h4>{{ registration.id }}{{ registration.name }} </h4>
-                            </td>
-                            <td>
-                                <h4>Email: {{ booking_details.email }}</h4>
-                            </td>
-                            <td>
-                                <h4>Bootcamp: {{ registration.bootcamp_date }}</h4>
-                            </td>
-                            <td>
-                                <button type="submit" class="btn-register">Update</button>
-                            </td>
-                        </tr>
-                    </form>
-                    {% endif %}
-                    {% empty %}
+                    {% csrf_token %}
                     <tr>
                         <td>
-                            <h4>Please register for a bootcamp date.</h4>
+                            <h4>{{ current_registration.name }}</h4>
                         </td>
                         <td>
-                            <a class="btn-register" href="{% url 'registration_form' %}">Register</a>
+                            <h4>{{ current_registration.email }}</h4>
+                        </td>
+                        <td>
+                            <h4>{{ registration_details.email }}</h4>
+                        </td>
+                        <td>
+                            <button type="submit" class="btn-register">Update</button>
                         </td>
                     </tr>
-                    {% endfor %}
-                    {% endif %}
+                    </form>
                 </table>
             </div>
         </div>

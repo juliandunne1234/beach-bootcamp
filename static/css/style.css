@@ -40,6 +40,7 @@ footer {
 .social-media {
     font-size: 1.25rem;
     padding: 0.25rem;
+    color: #1a3771dc;
 }
 
 .social-media:hover {
@@ -140,41 +141,6 @@ footer {
     color: #105ce8;
 }
 
-.btn-blog {
-    color: #1a3771dc;
-    border: none;
-    border-radius: 5px;
-    background: darkorange;
-    font-size: 200%;
-    font-weight: 500;
-    margin-top: 1vh;
-    padding: 1vh 4vw;
-    text-decoration: none;
-}
-
-/* .btn-blog:hover {
-    color: darkorange;
-    border: none;
-    background: #1a3771dc;
-}
-
-.btn-login, .btn-logout, .btn-signup {
-    color: #1a3771dc;
-    border: none;
-    border-radius: 5px;
-    background: darkorange;
-    font-size: 200%;
-    font-weight: 500;
-    margin-top: 1vh;
-    padding: 1vh 0;
-}
-
-.btn-login:hover, .btn-logout:hover, .btn-signup:hover {
-    color: darkorange;
-    border: none;
-    background: #1a3771dc;
-} */
-
 /* All 4 types of workout incorporated into a beach bootcamp */
 
 .endurance-image, .strength-image, .balance-image {
@@ -225,10 +191,8 @@ footer {
 
 .post-container {
     margin-top: 2.5vh;
-    background-color: #1a3771dc;
-    height: 40vh;
+    height: 60vh;
     overflow: auto;
-    border-radius: 10px;
 }
 
 .post-link {
@@ -237,14 +201,14 @@ footer {
 }
 
 .post-content-container {
-    color: darkorange;
+    /* color: #1a3771dc; */
     padding: 1vh 2vw;
 }
 
 .post-img-top {
     background: no-repeat center 40%;
     background-size: cover;
-    height: 50%;
+    height: 60%;
     width: 100%;
     position: relative;
 }
@@ -252,14 +216,6 @@ footer {
 .post-content-divider {
     border-top: 0.25rem solid darkorange;
     margin-top: 0.5vh;
-}
-
-.transform-post {
-    transition: all .5s ease-in; 
-}
-
-.transform-post:hover {
-    transform: scale(1.05);
 }
 
 /* Blog Post Detail */
@@ -284,21 +240,14 @@ footer {
     font-size: 0.75rem;
 }
 
-.color-gradient {
-    margin: auto;
-    padding-top: 5vh;
-    background: linear-gradient(to bottom, #1a3771dc 20%, darkorange 60%);
-}
-
 .message-container-outer {
     margin: auto;
-    background-color: darkorange;
-    color: #1a3771dc;
+    color: rgb(93, 93, 92);
+    font-family: Helvetica;
     padding-bottom: 1vh;
 }
 
 .message-container-full {
-    color: #1a3771dc;
     margin: auto;
 }
 
@@ -312,33 +261,15 @@ footer {
     font-size: 0.75rem;
 }
 
-.btn-add-comment {
-    color: darkorange;
-    border: none;
-    border-radius: 5px;
-    background: #1a3771dc;
-    font-size: 200%;
-    font-weight: 500;
-    margin-top: 1vh;
-    padding: 1vh 4vw;
-    text-decoration: none;
-}
-
-.btn-add-comment:hover {
-    color: #1a3771dc;
-    border: none;
-    background: darkorange;
-}
-
 /* Signin and Logout pages */
 
-.btn-login, .btn-logout, .btn-signup {
+.btn-blog, .btn-login, .btn-logout, .btn-signup {
     margin: auto;
 }
 
 /* Registration page */
 
-.post-container-full, .registration-container-full, .signup-container-full {
+.registration-container-full, .signup-container-full {
     border-radius: 10px;
 }
 
@@ -350,7 +281,7 @@ footer {
     padding-bottom: 1vh;
 }
 
-.btn-login, .btn-logout, .btn-signup, .btn-register {
+.btn-blog, .btn-login, .btn-logout, .btn-signup, .btn-register {
     color: #1a3771dc;
     border: none;
     border-radius: 5px;
@@ -362,7 +293,7 @@ footer {
     text-decoration: none;
 }
 
-.btn-login:hover, .btn-logout:hover, .btn-signup:hover, .btn-register:hover {
+.btn-blog:hover, .btn-login:hover, .btn-logout:hover, .btn-signup:hover, .btn-register:hover {
     color: darkorange;
     border: none;
     background: #1a3771dc;
@@ -411,17 +342,6 @@ footer {
         display: flex;
         justify-content: center;
     }
-
-    .btn-blog {
-        font-size: 150%;
-        margin-top: 2vh;
-        padding: 1vh 2vw;
-    }
-
-    /* .btn-login,.btn-logout, .btn-signup {
-        font-size: 150%;
-        padding: 1.5vh 8vw;
-    } */
 
     /* Bootcamp blog page */
     .blog-header h1 {

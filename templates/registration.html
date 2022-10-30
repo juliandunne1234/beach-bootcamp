@@ -7,9 +7,10 @@
         <div class="col-sm-6 offset-sm-3 blog-header">
             <h1 class="post-title">Bootcamp Registration</h1>
             {% if user.is_authenticated %}
-            <p class="registration-text">If you have already registered for a bootcamp
-                but for some reason can't attend then please <a href="{% url 'cancel_registration' %}">cancel</a> your
-                registration.</p>
+            <p class="registration-text">Please keep your bootcamp registrations up to date.
+                <a href="{% url 'cancel_registration' %}">Cancel</a> a booking or <a
+                    href="{% url 'cancel_registration' %}">Update</a> your
+                contact information as required.</p>
             {% endif %}
         </div>
     </div>

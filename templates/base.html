@@ -35,7 +35,7 @@
                 </ul>
                 <ul class="navbar-nav col-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'bootcamp_blog' %}">Blog Post</a>
+                        <a class="nav-link" href="{% url 'bootcamp_blog' %}">Blog</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -91,10 +91,10 @@
                         <span class="social-media-detail">Follow us: </span>
                     </div>
                     <div class="social-media-outer">
-                        <i class="fab fa-facebook-square ms-3 social-media"></i>
-                        <i class="fab fa-twitter-square ms-3 social-media"></i>
-                        <i class="fab fa-instagram-square ms-3 social-media"></i>
-                        <i class="fab fa-youtube-square ms-3 social-media"></i>
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square ms-3 social-media"></i></a>
+                        <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter-square ms-3 social-media"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square ms-3 social-media"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square ms-3 social-media"></i></a>
                     </div>  
                 </div>
             </div>

@@ -11,11 +11,12 @@ class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'bootcamp_blog.html'
-    paginate_by = 12
 
 
 class PostDetail(View):
-
+    """
+    Select one of the posts to see approved user comments added to the post
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -32,6 +33,9 @@ class PostDetail(View):
             },
         )
 
+    """
+    Post comments to the selected blog post
+    """
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -40,7 +44,6 @@ class PostDetail(View):
         comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.post = post

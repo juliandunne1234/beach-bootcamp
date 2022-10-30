@@ -5,7 +5,7 @@
 <section class="container-fluid">
     <div class="row text-center">
         <div class="col-sm-6 offset-sm-3 blog-header">
-            <h1 class="post-title">Blog Post - {{ post.title }}</h1>
+            <h1>{{ post.title }}</h1>
         </div>
     </div>
     <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
@@ -14,54 +14,56 @@
 <!-- Selected blog post -->
 <section class="container-fluid">
     <div class="row">
-        <div class="col-sm-8 offset-sm-2">
-            <div class="post-detail-image">
-            </div>
-            <div class="row post-container-full">
-                <div class="">
-                    <p class="post-subtitle">Posted by {{ post.author }} on <b>{{ post.created_on }}</b></p>
-                    <p class="post-content">{{ post.content | safe }}
-                        {% with comments.count as total_comments %}
-                            <strong><i class="far fa-comments"></i>
-                                {{ total_comments }}
-                            </strong>
-                        {% endwith %}
-                    </p>
+        <div class="col-sm-10 offset-sm-1">
+            <div class="row justify-content-center">
+            <div class="col-sm-10 text-center">
+                <div class="post-container">
+                    <img class="post-img-top"
+                        src="https://res.cloudinary.com/dwc6uclyo/image/upload/v1664736535/post-image_lzmhts.jpg"/>
+                    <div class="post-content-container">
+                        <p>
+                            {% with comments.count as total_comments %}
+                                <strong><i class="far fa-comments"></i>
+                                    {{ total_comments }}
+                                </strong>
+                            {% endwith %}
+                            | {{ post.title }} - Posted by {{ post.author }} on {{ post.created_on }}
+                        </p>
+                        <p>
+                            {{ post.content | safe }}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8 offset-sm-2">
-            <div class="color-gradient">
             </div>
         </div>
     </div>
+    <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
 
     <!-- Blog post comments by logged in users -->
     <div class="row">
-        <div class="col-sm-8 offset-sm-2">
-            <div class="row message-container-outer">
-                <h3 class="text-center">Comments:</h3>
-                <div class="col-sm-6 offset-sm-3 comment-divider"></div>
-                <div class="row message-container-full">
+        <div class="col-sm-5 offset-sm-2">
+            <div class="message-container-outer">
+                <div class="message-container-full">
                     {% if commented %}
                     <div class="alert alert-success" role="alert">
                         Your comment is awaiting approval
                     </div>
                     {% else %}
                     {% for comment in comments %}
-                    <div class="">
+                    <div class="text-center">
                         <p class="message-subtitle">
-                            Comment by {{ comment.name }} on <b>{{ comment.created_on }}</b>
+                            Comment | {{ comment.name }} on {{ comment.created_on }}
                         </p>
                         <p class="message-content">
                             {{ comment.body | linebreaks }}
                         </p>
                     </div>
+                    <div class="section-divider"></div>
                     {% endfor %}
                 </div>
             </div>
+            
             <div class="row message-container-outer">
                 {% if user.is_authenticated %}
                     <div class="col-sm-4">
@@ -72,7 +74,7 @@
                         <form method="post">
                             {{ comment_form | crispy }}
                             {% csrf_token %}
-                            <button type="submit" class="btn-add-comment">Submit</button>
+                            <button type="submit" class="btn-login">Submit</button>
                         </form>
                     </div>
                 {% endif %}   
@@ -80,7 +82,6 @@
                 </div>
             </div>
         </div>
-    <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
 </section>
 
 {% endblock %}
