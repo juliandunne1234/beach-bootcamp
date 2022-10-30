@@ -16,25 +16,25 @@
     <div class="row">
         <div class="col-sm-10 offset-sm-1">
             <div class="row justify-content-center">
-            <div class="col-sm-10 text-center">
-                <div class="post-container">
-                    <img class="post-img-top"
-                        src="https://res.cloudinary.com/dwc6uclyo/image/upload/v1664736535/post-image_lzmhts.jpg"/>
-                    <div class="post-content-container">
-                        <p>
-                            {% with comments.count as total_comments %}
+                <div class="col-sm-10 text-center">
+                    <div class="post-container">
+                        <img class="post-img-top"
+                            src="https://res.cloudinary.com/dwc6uclyo/image/upload/v1664736535/post-image_lzmhts.jpg" />
+                        <div class="post-content-container">
+                            <p>
+                                {% with comments.count as total_comments %}
                                 <strong><i class="far fa-comments"></i>
                                     {{ total_comments }}
                                 </strong>
-                            {% endwith %}
-                            | {{ post.title }} - Posted by {{ post.author }} on {{ post.created_on }}
-                        </p>
-                        <p>
-                            {{ post.content | safe }}
-                        </p>
+                                {% endwith %}
+                                | {{ post.title }} - Posted by {{ post.author }} on {{ post.created_on }}
+                            </p>
+                            <p>
+                                {{ post.content | safe }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
@@ -63,25 +63,25 @@
                     {% endfor %}
                 </div>
             </div>
-            
+
             <div class="row message-container-outer">
                 {% if user.is_authenticated %}
-                    <div class="col-sm-4">
-                        <h3>Add a comment:</h3>
-                        <p>Logged in: <b>{{ user.username }}</b></p>
-                    </div>
-                    <div class="col-sm-8 text-center">
-                        <form method="post">
-                            {{ comment_form | crispy }}
-                            {% csrf_token %}
-                            <button type="submit" class="btn-login">Submit</button>
-                        </form>
-                    </div>
-                {% endif %}   
-                {% endif %}
+                <div class="col-sm-4">
+                    <h3>Add a comment:</h3>
+                    <p>Logged in: <b>{{ user.username }}</b></p>
                 </div>
+                <div class="col-sm-8 text-center">
+                    <form method="post">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn-login">Submit</button>
+                    </form>
+                </div>
+                {% endif %}
+                {% endif %}
             </div>
         </div>
+    </div>
 </section>
 
 {% endblock %}

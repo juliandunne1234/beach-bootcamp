@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 class Post(models.Model):
     """
     Admin post model
@@ -36,6 +37,6 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['created_on']
-    
+
     def __str__(self):
         return f"Comment {self.body} by {self.name}"

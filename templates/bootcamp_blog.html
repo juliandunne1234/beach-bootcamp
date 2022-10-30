@@ -19,14 +19,14 @@
                 <div class="col-sm-10 text-center">
                     <div class="post-container">
                         <img class="post-img-top"
-                                src="https://res.cloudinary.com/dwc6uclyo/image/upload/v1664736535/post-image_lzmhts.jpg"/>
+                            src="https://res.cloudinary.com/dwc6uclyo/image/upload/v1664736535/post-image_lzmhts.jpg" />
                         <div class="post-content-container">
                             <p>Post by: {{ post.author }} | {{ post.created_on }}</p>
                             <p> {{ post.content | safe }}</p>
                         </div>
-                            <a href="{% url 'bootcamp_post' post.slug %}" class="btn-login">Add Comment</a>
-                        </div>
+                        <a href="{% url 'bootcamp_post' post.slug %}" class="btn-login">Add Comment</a>
                     </div>
+                </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row justify-content-center">

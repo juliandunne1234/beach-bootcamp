@@ -20,25 +20,24 @@ class BootcampRegistration(View):
             {
                 "booking_details": BookBootcampForm(),
             }
-        )  
-    
+        )
 
     def post(self, request, *args, **kwargs):
         """
         Returns registration form booking details
         """
         bootcamp_booking_details = BookBootcampForm(data=request.POST)
-        
+
         if bootcamp_booking_details.is_valid():
 
             bootcamp_booking_details.instance.name = request.user.username
             bootcamp_booking_details.email = request.POST.get('email')
             bootcamp_booking_details.bootcamp_date = request.POST.get('bootcamp_date')
-            queryset = BookBootcamp13.objects.filter(name= bootcamp_booking_details.instance.name, bootcamp_date=bootcamp_booking_details.bootcamp_date)
-            
+            queryset = BookBootcamp13.objects.filter(name=bootcamp_booking_details.instance.name, bootcamp_date=bootcamp_booking_details.bootcamp_date)
+
             if  queryset:
                 messages.add_message(
-                        request, 
+                        request,
                         messages.WARNING,
                         f"Hi, you have already registered for the this bootcamp!"
                         )
@@ -46,13 +45,13 @@ class BootcampRegistration(View):
             else:
                 bootcamp_booking_details.save()
                 messages.add_message(
-                        request, 
+                        request,
                         messages.SUCCESS,
                         f"Hi, thank you for registering for the bootcamp!"
                         )
 
             return HttpResponseRedirect(
-                    reverse("index",)               
+                    reverse("index",)
                 )
 
         else:
@@ -62,7 +61,7 @@ class BootcampRegistration(View):
                 {
                     "booking_details": BookBootcampForm()
                 }
-            )   
+            )
 
 
 class CancelRegistration(View):
@@ -90,7 +89,7 @@ class CancelRegistration(View):
         user_registration.delete()
 
         messages.add_message(
-                    request, 
+                    request,
                     messages.ERROR,
                     f"Hi, you have cancelled your registration for this bootcamp!"
                     )
@@ -110,13 +109,13 @@ def update_registration_email(request, id):
             form.save()
 
             messages.add_message(
-                    request, 
+                    request,
                     messages.INFO,
                     f"Thank you for keeping your email up to date!"
                     )
 
             return HttpResponseRedirect(
-                    reverse("index",)               
+                    reverse("index",)
                 )
 
     form = UpdateBookingForm(instance=current_registration)

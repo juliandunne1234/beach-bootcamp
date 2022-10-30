@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <section class="container-fluid">
     <div class="landing-image">
         {% if not user.is_authenticated %}
@@ -18,6 +19,7 @@
     </div>
 </section>
 
+<!-- Bootcamp introduction -->
 <section class="container-fluid bootcamp-intro">
     <div class="row bg-orange intro-spacer"></div>
     <div class="row">
@@ -26,9 +28,9 @@
                 <div class="col-lg-6 col-md-6 intro-text text-center">
                     <h1>Beach Bootcamps</h1>
                     <p>
-                        Introducing Ireland's newest physical and mental endurance challenge. Located on the north side of
-                        Dublin city, Dollymount beach is the launch location for Beach Bootcamps. Entry is free as this is part
-                        of a community initiative.
+                        Introducing Ireland's newest physical and mental endurance challenge. Located on the north side
+                        of
+                        Dublin city, Dollymount beach is the launch location for Beach Bootcamps.
                     </p>
                 </div>
                 <div class="col-lg-5 col-md-5 intro-text text-center">
@@ -51,7 +53,8 @@
             <h2>Every Bootcamp Changes</h2>
             <p>
                 Each bootcamp is adapted to include the ideas of the participants. This is an important aspect of each
-                bootcamp. Participants are encouraged to post ideas to the bootcamp blog. The blog is then referenced during
+                bootcamp. Participants are encouraged to post ideas to the bootcamp blog. The blog is then referenced
+                during
                 planning of each bootcamp. The only part you won't change is the difficulty which will always be
                 maximum!
             </p>
@@ -63,6 +66,7 @@
     <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 section-divider"></div>
 </section>
 
+<!-- 4 types of exercise the bootcamp is based upon  -->
 <section class="container-fluid bootcamp-intro">
     <div class="row">
         <div class="col-lg-10 offset-lg-1">
@@ -120,10 +124,10 @@
             </div>
         </div>
     </div>
-    
+
     <div class="col-sm-6 offset-sm-3 section-divider"></div>
 </section>
-    
+
 </section>
 
 {%endblock%}
