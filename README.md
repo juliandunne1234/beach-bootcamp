@@ -188,18 +188,14 @@ Languages, libraries and frameworks used during the development of this website:
     - Used as the development environment.
 - [Heroku](https://dashboard.heroku.com/apps)
     - Used to deploy the application.
-- [Pep8](http://pep8online.com/)
-    - Used to test my code for any issues or errors.
 - [Cloudinary](https://cloudinary.com/)
     - Used to store static files and images.
 - [Favicon.io](https://favicon.io/)
     - Used to create favicon's for my website
 - [W3C Markup Validation Service](https://validator.w3.org/) 
     - Used to validate all HTML code written and used in this webpage.
-- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
     - Used to validate all CSS code written and used in this webpage.
-- [JSHint](https://jshint.com/)
-    - Used to validate JS code
 - [AmIResponsive](http://ami.responsivedesign.is/)
     - Used to generate responsive images used in README file.
 - [PostgreSQL](https://www.postgresql.org/)
@@ -207,16 +203,18 @@ Languages, libraries and frameworks used during the development of this website:
 
 ***
 
-## Testing
-* Testing to confirm shop functions as intended. This included:
-    * If option 1-3 is not selected then the shop should tell customer it does not provide that service and return to the shop menu.
-    * Shop requires customer to enter a number for euros that they hold.
-    * When an item is purchased the stock quantity reduces and the customer credit and the shop balance are updated to reflect this purchase. The stock quantities also reduce.
-    * The google spreadsheets are also sent this information so that the database remains up to date
-    * If a customer requests items that the shop does not stock then the customer is reminded that only the items in stock are available.
-    * When shop stock is depleted the shopkeeper can restock the shop whereby the shop balance is updated to reflect this albeit at the lower wholesale prices.
-    * The google spreadsheets are also sent this information so that the database remains up to date
+## Validator Testing
+* HTML - errors are present but each error is either due to template inheritance or the django framework code syntax when passing values to HTML pages.
 
+* CSS - no errors found.
+
+* Accessibility - Website accessibility is an important part of website development. Devtools Lighthouse was used to compare the home page and the sign up page as it was observed during testing that the homepage load time was significantly longer than the other pages.
+
+    * Homepage
+    ![Navigation menu header screenshot](assets/images/lighthouse_homepage_report.jpg)
+
+    * Sign Up page
+    ![Navigation menu header screenshot](assets/images/lighthouse_signup_report.jpg)
 ***
 
 ## Deployment
