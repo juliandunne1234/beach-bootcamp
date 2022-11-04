@@ -8,6 +8,25 @@ from .models import BootcampNextDate13, BookBootcamp13
 from .forms import BookBootcampForm, UpdateBookingForm
 
 
+# Function to calculate the number of current registrations
+def current_registrations(bootcamp_date):
+
+    current_registrations = len(BookBootcamp13.objects.filter(
+        bootcamp_date=bootcamp_date,)
+        )
+
+    return current_registrations
+
+
+# Function to calculate the number of places remaining in a bootcamp
+def bootcamp_capacity(booking_confirmed):
+
+    max_capacity = 3
+    available_spaces = max_capacity - booking_confirmed
+
+    return available_spaces
+
+
 class BootcampRegistration(View):
     """
     Registration form to enter the bootcamp participants booking details
@@ -35,11 +54,21 @@ class BootcampRegistration(View):
             bootcamp_booking_details.bootcamp_date = request.POST.get('bootcamp_date')
             queryset = BookBootcamp13.objects.filter(name=bootcamp_booking_details.instance.name, bootcamp_date=bootcamp_booking_details.bootcamp_date)
 
+            booking_confirmed = current_registrations(bootcamp_booking_details.bootcamp_date)
+            available_spaces = bootcamp_capacity(booking_confirmed)
+
             if  queryset:
                 messages.add_message(
                         request,
                         messages.WARNING,
                         f"Hi, you have already registered for the this bootcamp!"
+                        )
+
+            elif available_spaces <= 0:
+                messages.add_message(
+                        request,
+                        messages.WARNING,
+                        f"Hi {bootcamp_booking_details.instance.name}, sorry but due to demand this bootcamp is fully booked! "
                         )
 
             else:

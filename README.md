@@ -1,108 +1,232 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Beach Bootcamps</h1>
 
-Welcome juliandunne1234,
+![](assets/images/homepage_responsive.jpg)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+<p> 
+Created as part of the Code Institute Portfolio 4: Full Stack Milestone Project 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[Beach Bootcamps](https://beachbootcamp2.herokuapp.com/)
+</p>
 
-## Gitpod Reminders
+<p>
+ This website was developed using the full stack framework that includes HTML, CSS, Javascript, Python and Django. This website is for a fictional bootcamp that is to take place on a beach in Dublin, Ireland. The primary objectives of these beach bootcamps are for people to get to excercise as a group in a different type of setting while also making better use of beaches that are empty at various times of the year mainly due to weather conditions. 
+</p>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+***
 
-`python3 -m http.server`
+## UX
 
-A blue button should appear to click: _Make Public_,
+### Making a plan
 
-Another blue button should appear to click: _Open Browser_.
+The website should be:
+- Easy to use with minimal booking requirements.
+- Interactive blog for users to leave feedback/suggestions on a particular bootcamp.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The target audience for beach bootcamps:
+- All ages that excercise routinely
+- Bootcamps are held in winter on a beach so difficulty level will be increased due to external factors
+- Expectation that target audience enjoy physical challenges.
 
-A blue button should appear to click: _Make Public_,
+Website users require:
+- An informative website that makes it immediately obvious to the user the purpose of the website.
+- Easy to Signup and register for a bootamp.
+- Ability update registration contact details or delete registration booking.
 
-Another blue button should appear to click: _Open Browser_.
+It is assumed that most users will access the website using a mobile phone. Website responsiveness is a fundamental part of the design and Bootstrap has been used throughout for this purpose.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+***
 
-To log into the Heroku toolbelt CLI:
+## User Stories
+[Defined user stories](https://github.com/users/juliandunne1234/projects/10)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Please find below the acceptance criteria for my user stories. These have been included for info only. It was difficult creating acceptance criteria for the project and ensuring the criteria was met throughout. This was due to certain changes that were made to how the website  functioned, including changing custom models so that the User model played a greater role. Also certain criteria changed due to the level of difficulty. For this reason user stories were changed several times and criteria was removed or <strike>striked</strike> out following the final review.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+2. As a Site User I can click on a post so that I can read the full text.
+3. As a Site User / Admin I can view comments on an individual post so that I can read the conversation.
+4. As a Site User I can create an account so that I can book a space in a bootcamp.
+5. As a Site User I can leave comments on a post so that I can be involved in the conversation.
+6. As a Site Admin I can create, read, update and delete posts so that I can manage my blog content.
+7. As a Site Admin I can create draft posts so that I can finish writing the content later.
+8. As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments.
+9. As a Site User I can only sign up for a bootcamp if a space is available so that over booking does not occur.
+10. <strike>As a Site User I can only sign up for one bootcamp within a 30 day period so that more people have a chance to attend.</strike>
+11. As a Site User I can view a list of posts so that I can select one to read.
+12. As a Site User I can register for a bootcamp so that I can participate.
 
-------
+***
 
-## Release History
+## Scope
+The website should include:
+- Responsive navbar for navigating website pages.
+- Landing page with image showing group excercise. 
+- A brief introduction to beach bootcamps and information on the types of training.
+- Signup/login pages feature using Django allauth
+- Blog page with post/comment history that logged in users can join the discussion and leave suggestions/feedback on a given bootcamp.
+- Update details page, for registered users to update their registration details which in turn updates the database model.
+- Delete registration for users that cannot attend a bootcamp.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+***
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Structure
+The user should be able to navigate the website with ease. Each page should serve a purpose.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+The website contains the following apps:
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+1. landing page - introduction to beach bootcamps
+2. booking - register for a bootcamp
+3. blog - logged in users to give feedabck/suggestions on a bootcamp
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+***
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## Databases
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### booking
+- The booking app database contains 2 custom models. The naming of the models contains the number '13'. This number refers to the number of times that the database migrations folder had to be cleared. The current models are the thirteenth iteration.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### blog
+- The blog app database contains 2 models developed using the CodeInstitute course material. The models were slightly modified to suit the requirements of this project. 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+***
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Features
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Navigation Bar
+The navigation bar is used to access active pages. Page accessibility changes based upon whether a user is logged in.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+If the user is not logged in then the navigation bar contains a link to the bootcamp blog to view post and comments and a link to the login page.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![](assets/images/navbar_logged_out.jpg)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+If the user has signed up and is logged in the navigation bar contains a link to the bootcamp blog, a link to the bootcamp registration page and a link to the user logout page.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![](assets/images/navbar_logged_in.jpg)
 
-------
+On smaller screens to improve website accessibility the navigation bar collapses to a hamburger icon.
 
-## FAQ about the uptime script
+![](assets/images/navbar_collapsed.jpg)
 
-**Why have you added this script?**
+### Footer
+The footer displays fictional contact information with links to social media for visual pruposes only.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![](assets/images/footer.jpg)
 
-**How will this affect me?**
+### Home Page
+**Landing image:** User first sees an image of a group of people running on a beach with a link to signup to beach bootcamps. This image was chosen as it looks fun and welcoming, showing a group excerising, running along a beach. When a user is logged in the "Sign Up Now" link displayed is hidden.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![](assets/images/landing_image_intro.jpg)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+**Introduction with Bootcamp Location**: Brief introduction including bottcamp location with map.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![](assets/images/intro_map_location.jpg)
 
-**So….?**
+**Bootcamp Blog Link**: Reason for creating the bootcamp blog with link styled as a button taking the user to the blog page.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![](assets/images/subintro_blog.jpg)
 
-**Can I opt out?**
+**4 Types of Excercise**: Introduce the four different types of excercise that the bootcamp is developed around. Image and description included.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+![](assets/images/excercise_types.jpg)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Account Authorisation
+**Login Page**: The user enters their username and password to login. If the user does not have an account then there is also a sign up link.
 
-**Anything more?**
+![](assets/images/sign_in.jpg)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+**Sign Up Page**: The user enters a unique username and the password must be entered twice correctly to confirm. Entering an email is optional at this stage as it is only required when registering for a bootcamp.
 
----
+![](assets/images/sign_up.jpg)
 
-Happy coding!
+**Logout Page**: The user selects the logout link in the header and confirms logout.
+
+![](assets/images/logout.jpg)
+
+### Registration
+**Bootcamp Booking Form**: This page includes a bootcamp booking form where the user must be logged in to submit the form. The form has email and bootcamp date fields. These details along with the logged in users username is used to populate the bootcamp model.
+
+![](assets/images/registration_page.jpg)
+
+**Cancel Registration**: If a user has registered for a bootcamp but cannot attend then registration can be cancelled.
+
+![](assets/images/cancel_registration_page.jpg)
+
+**Update Registration**: If a user needs to update their contact detials which is by email.
+
+![](assets/images/update_registration_details_page.jpg)
+
+### Bootcamp Blog
+**Bootcamp Admin Post**: Taken form the CodeInstitute course material. The purpose of the blog post is that for a particular bootcamp the admin user creates a post with information on the applicable bootcamp to start the discussion.
+
+![](assets/images/blog_post.jpg)
+
+**Blog Comments**: Taken form the CodeInstitute course material. Logged in users have the ability to add comments to a bootcamp post. The purpose of this is for participants to get involved in shaping the bootcamp and providing feedback on their bootcamp experience.
+
+![](assets/images/blog_comment.jpg)
+
+***
+
+## Technologies Used
+
+Languages, libraries and frameworks used during the development of this website:
+
+- [Django](https://www.djangoproject.com/)
+    - Django is the framework used to build the project and each of the apps.
+- [Python](https://www.python.org/)
+    - Python is the programming language used to write the code in each app.
+- [Bootstrap](https://getbootstrap.com/)
+    - Library used for creating responsive websites.
+- [Google Fonts](https://fonts.google.com/)
+    - Required for fonts used throughout website 
+- [Font Awesome](https://fontawesome.com/)
+    - Library that contains social media icons among others.
+- [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+    - Used while fixing spacing issues, finding bugs, and testing webpage responsiveness.
+- [GitHub](https://github.com/)
+    - Used to store code for the project after being pushed.
+- [Git](https://git-scm.com/)
+    - Used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+- [Gitpod](https://www.gitpod.io/)
+    - Used as the development environment.
+- [Heroku](https://dashboard.heroku.com/apps)
+    - Used to deploy the application.
+- [Pep8](http://pep8online.com/)
+    - Used to test my code for any issues or errors.
+- [Cloudinary](https://cloudinary.com/)
+    - Used to store static files and images.
+- [Favicon.io](https://favicon.io/)
+    - Used to create favicon's for my website
+- [W3C Markup Validation Service](https://validator.w3.org/) 
+    - Used to validate all HTML code written and used in this webpage.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
+    - Used to validate all CSS code written and used in this webpage.
+- [JSHint](https://jshint.com/)
+    - Used to validate JS code
+- [AmIResponsive](http://ami.responsivedesign.is/)
+    - Used to generate responsive images used in README file.
+- [PostgreSQL](https://www.postgresql.org/)
+    - Heroku's PostgreSQL relational database used in deployment to store the data for each model.
+
+***
+
+## Testing
+* Testing to confirm shop functions as intended. This included:
+    * If option 1-3 is not selected then the shop should tell customer it does not provide that service and return to the shop menu.
+    * Shop requires customer to enter a number for euros that they hold.
+    * When an item is purchased the stock quantity reduces and the customer credit and the shop balance are updated to reflect this purchase. The stock quantities also reduce.
+    * The google spreadsheets are also sent this information so that the database remains up to date
+    * If a customer requests items that the shop does not stock then the customer is reminded that only the items in stock are available.
+    * When shop stock is depleted the shopkeeper can restock the shop whereby the shop balance is updated to reflect this albeit at the lower wholesale prices.
+    * The google spreadsheets are also sent this information so that the database remains up to date
+
+***
+
+## Deployment
+- The beach bootcamp app has been deployed to [Heroku](https://www.heroku.com/) - a cloud platform service for developers to build and run applications: 
+    - Live link - [Beach Bootcamp](https://beachbootcamp2.herokuapp.com/)
+
+***
+
+## Credits
+- I Think Therefore I Blog walkthrough project with Code Institute was very helpful to use as a starting point for this project.
+- Tutor support was also very helpful and advice taken from mentor sessions was used during development of the app
+- Online resources including [python documenation](https://docs.python.org/3/library/dataclasses.html).
+- Bootstrap online documentation [Bootstrap](https://getbootstrap.com/)
